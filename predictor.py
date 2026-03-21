@@ -18,15 +18,15 @@ print("="*50)
 area = input("Enter Carpet Area (sqft):   ")
 bhk = input("Enter number of Bedrooms (BHK): ")
         
-baths = input(" Enter number of Bathrooms:")
+baths = input("Enter number of Bathrooms:")
 balcony = input("Enter number of Balconies:   ")
         
 print("\n--- Details ---")
-location = input("   Enter City/Location : ")
-status = input(" Status (e.g., Ready to Move, Under Construction): ")
-furnish = input("   Furnishing : ")
-facing = input(" Facing direction :  ")
-floor = input(" Floor detail: ")
+location = input("Enter City/Location : ")
+status = input("Status (e.g., Ready to Move, Under Construction): ")
+furnish = input("Furnishing : ")
+facing = input("Facing direction :  ")
+floor = input("Floor detail: ")
         
 resale_input = input("🔄 Is it a Resale? (y/n): ")
 is_resale = 1 if resale_input.lower() == 'y' else 0
