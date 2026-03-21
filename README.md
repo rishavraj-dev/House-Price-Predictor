@@ -135,6 +135,10 @@ Currently the `predictor.py` asks for:
 
 Then it prints an estimated property value.
 
+## Sample run images 
+![Image of sample Run 1](Sample%20Runs/Run1.png) 
+![Image of sample Run 2](Sample%20Runs/Run2.png) 
+
 ## Troubleshooting
 
 Model file not found:
