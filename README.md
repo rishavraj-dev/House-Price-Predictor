@@ -66,15 +66,12 @@ data['Price'] = data['Amount(in rupees)'].apply(clean_price)
 data['Area'] = data['Carpet Area'].apply(clean_area)
 data['Is_Resale'] = data['Transaction'].apply(lambda x: 1 if x == 'Resale' else 0)
 data['Bathrooms'] = data['Bathroom'].apply(clean_count)
-data['Balcony'] = data['Balcony'].apply(clean_count)
 data['Location'] = data['location']
-data['Status'] = data['Status']           
 data['Floor'] = data['Floor']             
 data['Furnishing'] = data['Furnishing']   
-data['Facing'] = data['facing']           
 smart_columns = [
-    'BHK', 'Area', 'Is_Resale', 'Location', 'Status', 
-    'Floor', 'Furnishing', 'Facing', 'Bathrooms', 'Balcony', 'Price'
+    'BHK', 'Area', 'Is_Resale', 'Location',
+    'Floor', 'Furnishing', 'Bathrooms', 'Price'
 ]
 clean_df = data[smart_columns].dropna() 
 clean_df.to_csv('dataset/clean_dataset.csv', index=False)
@@ -89,12 +86,9 @@ The training script expects `dataset/dataset.csv` with at least these columns:
 - `Area`
 - `Is_Resale`
 - `Bathrooms`
-- `Balcony`
 - `Location`
-- `Status`
 - `Floor`
 - `Furnishing`
-- `Facing`
    
 ## Sample Dataset image 
 ![Image of sample dataset](dataset.png)  
@@ -102,12 +96,12 @@ The training script expects `dataset/dataset.csv` with at least these columns:
 ## Train the Model
 Training the model includes the following steps:
 1) Ensure the dataset.csv is present in datasets folder in the above mentioned format 
-2) Run the train_model.py in the following way
+2) Run the train.py in the following way
 
 ```bash
-python train_model.py
+python train.py
 ```
-Current behavior of `train_model.py`:
+Current behavior of `train.py`:
 - reads `dataset/dataset.csv`
 - trains a preprocessing + regression pipeline
 - saves model to `model/model.pkl`
@@ -125,11 +119,8 @@ Currently the `predictor.py` asks for:
 - Area
 - BHK
 - Bathrooms
-- Balcony
 - Location
-- Status
 - Furnishing
-- Facing
 - Floor
 - Resale flag (`y` or `n`)
 
@@ -142,12 +133,12 @@ Then it prints an estimated property value.
 ## Troubleshooting
 
 Model file not found:
-- Run `python train_model.py` first.
+- Run `python train.py` first.
 
 Dataset file not found:
 - Make sure `dataset/dataset.csv` exists.
 
 Invalid numeric input while predicting:
-- Enter numbers for Area, BHK, Bathrooms, and Balcony.
+- Enter numbers for Area, BHK, and Bathrooms.
 
 

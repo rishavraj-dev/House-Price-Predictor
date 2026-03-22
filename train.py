@@ -9,8 +9,8 @@ import pandas
 
 data=pandas.read_csv('dataset/dataset.csv')
 
-features=['Location', 'Status', 'Floor', 'Furnishing', 'Facing']
-numbers=['BHK', 'Area', 'Is_Resale', 'Bathrooms', 'Balcony']
+features=['Location', 'Floor', 'Furnishing']
+numbers=['BHK', 'Area', 'Is_Resale', 'Bathrooms']
 input_features =data.drop('Price',axis=1)
 predicted_price=data['Price']
 

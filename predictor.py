@@ -6,7 +6,7 @@ try:
     with open('model/model.pkl', 'rb') as file:
         model = pickle.load(file)
 except FileNotFoundError:
-    print("Error: Could not find the model. Run train_model.py first!")
+    print("Error: Could not find the model. Run train.py first!")
     exit()
 
 
@@ -19,13 +19,10 @@ area = input("Enter Carpet Area (sqft):   ")
 bhk = input("Enter number of Bedrooms (BHK): ")
         
 baths = input("Enter number of Bathrooms:")
-balcony = input("Enter number of Balconies:   ")
         
 print("\n--- Details ---")
 location = input("Enter City/Location : ")
-status = input("Status (e.g., Ready to Move, Under Construction): ")
 furnish = input("Furnishing : ")
-facing = input("Facing direction :  ")
 floor = input("Floor detail: ")
         
 resale_input = input("🔄 Is it a Resale? (y/n): ")
@@ -36,12 +33,9 @@ user_data = pd.DataFrame([{
             'Area': float(area),
             'Is_Resale': is_resale,
             'Bathrooms': float(baths),
-            'Balcony': float(balcony),
             'Location': location,
-            'Status': status,
             'Floor': floor,
-            'Furnishing': furnish,
-            'Facing': facing
+            'Furnishing': furnish
         }])
 
 print("\n Calculating market value based on current data...")
