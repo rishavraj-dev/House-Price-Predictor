@@ -74,8 +74,8 @@ smart_columns = [
     'Floor', 'Furnishing', 'Bathrooms', 'Price'
 ]
 clean_df = data[smart_columns].dropna() 
-clean_df.to_csv('dataset/clean_dataset.csv', index=False)
-print(f"Success! Saved {len(clean_df)} highly detailed properties to clean_dataset.csv.")
+clean_df.to_csv('dataset/dataset.csv', index=False)
+print(f"Success! Saved {len(clean_df)} highly detailed properties to dataset.csv.")
  ```
 ## Dataset Format
 
