@@ -41,17 +41,19 @@ def main():
     print("\n Calculating market value based on current data...")
 
     predicted_price = model.predict(user_data)[0]
+    final_price = max(predicted_price, 2000000)
 
     print("\n" + "-"*50)
-    print(f"  ESTIMATED PROPERTY VALUE: ₹{predicted_price:,.2f}")
+    print(f"  ESTIMATED PROPERTY VALUE: ₹{final_price:,.2f}")
     print("-"*50 + "\n")
     print("Thank you for using the property price predictor! 🏡")
 print("Welcome to the house price predictor :)")
-choice=input("Choose an option: \n 1. Press 1 to Predict another property\n 2.Press any key except 1 to exit  : ")
+choice=input("Choose an option: \n 1.Press 1 to predict property\n 2.Press any key except 1 to exit :  ")
 if choice == '1':
-    print("Goodbye! 👋")
+    main()
     exit()
 elif choice == '2':
-    main()
+    print("Exiting the program. Goodbye!")
+    exit
 else:
     exit()
